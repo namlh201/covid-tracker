@@ -1,0 +1,27 @@
+.all {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  -webkit-text-stroke-color: var(--dark);
+}
+
+.number {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.total {
+  color: var(--red);
+}
+
+.active {
+  color: var(--orange);
+}
+
+.recovered {
+  color: var(--green);
+}
+
+.death {
+  color: var(--gray);
+}

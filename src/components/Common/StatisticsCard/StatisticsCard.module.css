@@ -1,0 +1,23 @@
+.stats {
+  height: 16rem;
+  width: 100%;
+}
+
+.statsItems {
+  height: 8rem;
+}
+
+.statsBanner {
+  height: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  color: var(--grey);
+}

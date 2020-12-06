@@ -1,0 +1,18 @@
+@import "../../../../fonts/fonts.css";
+
+.logo {
+    position: relative;
+
+    font-family: Fredoka One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
