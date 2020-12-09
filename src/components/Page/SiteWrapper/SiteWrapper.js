@@ -1,13 +1,9 @@
 // @flow
 
 import React from "react";
-import { NavLink, withRouter } from "react-router-dom";
 
 import {
   Site,
-  RouterContextProvider,
-  Nav,
-  Button
 } from "tabler-react";
 
 import Header from "./Header/Header.js";

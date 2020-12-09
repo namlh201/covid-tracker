@@ -1,5 +1,11 @@
 import React from 'react';
+
 import Select from 'react-select';
+
+import {
+  Grid,
+  Card
+} from 'tabler-react';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -38,12 +44,22 @@ class SearchBar extends React.Component {
 
   render () {
     return (
-      <Select
-        value={this.state.selectedOption}
-        placeholder="Select Country"
-        options={this.state.countryData}
-        onChange={this.handleChange}
-      />
+      <Grid.Row cards>
+      <Grid.Col>
+        <Card>
+          <Grid.Row>
+            <Grid.Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Select
+                value={this.state.selectedOption}
+                placeholder="Select Country"
+                options={this.state.countryData}
+                onChange={this.handleChange}
+              />
+            </Grid.Col>
+          </Grid.Row>
+        </Card>
+      </Grid.Col>
+    </Grid.Row>
     )
   }
 }

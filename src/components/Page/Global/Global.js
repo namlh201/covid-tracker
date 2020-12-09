@@ -7,7 +7,9 @@ import {
 } from "tabler-react";
 
 import SiteWrapper from "../SiteWrapper/SiteWrapper.js";
+
 import GlobalStatisticsCard from "../../Common/StatisticsCard/GlobalStatisticsCard.js";
+import GlobalHistoryCard from "../../Common/HistoryCard/GlobalHistoryCard.js";
 
 class Global extends React.Component {
   render() {
@@ -15,6 +17,7 @@ class Global extends React.Component {
       <SiteWrapper>
         <Page.Content>
           <GlobalStatisticsCard />
+          <GlobalHistoryCard lastDays={10} />
         </Page.Content>
       </SiteWrapper>
     )

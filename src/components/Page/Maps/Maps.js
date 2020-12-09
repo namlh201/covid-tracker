@@ -9,8 +9,6 @@ import {
   Tabs
 } from "tabler-react";
 
-import { VectorMap } from "react-jvectormap";
-
 import SiteWrapper from "../SiteWrapper/SiteWrapper.js";
 import WorldMap from "./WorldMap.js";
 

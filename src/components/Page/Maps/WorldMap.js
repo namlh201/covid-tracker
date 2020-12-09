@@ -4,10 +4,6 @@ import React from "react";
 
 import { VectorMap } from "react-jvectormap";
 
-const handleClick = (e, countryCode) => {
-  console.log(countryCode);
-};
-
 class WorldMap extends React.Component {
   constructor(props) {
     super(props);
@@ -34,6 +30,7 @@ class WorldMap extends React.Component {
           this.setState({
             mapData: data["data"].reduce((a,x) => ({...a, [x["countryCode"]]: x[filtered]}), {})
           })
+          console.log(this.state.mapData);
         }
       });
   }
@@ -45,15 +42,14 @@ class WorldMap extends React.Component {
   render() {
     return (
       <VectorMap
-        map={"world_mill"}
-        backgroundColor="transparent" //change it to ocean blue: #0077be
+        map="world_mill"
+        backgroundColor="transparent"
         zoomOnScroll={false}
         containerStyle={{
           width: "100%",
           height: "520px",
           paddingTop: "0%"
         }}
-        onRegionClick={handleClick} //gets the country code
         containerClassName="map"
         regionStyle={{
           initial: {
@@ -68,15 +64,15 @@ class WorldMap extends React.Component {
             cursor: "pointer"
           },
           selected: {
-            fill: "#2938bc", //color for the clicked country
+            fill: "#2938bc",
             "fill-opacity": 0.6
           },
           selectedHover: {}
         }}
         regionLabelStyle={{
           initial: {
-            'font-family': 'Cerebri Sans',
-            'font-size': '12',
+            'font-family': 'Roboto',
+            'font-size': '13',
             'font-weight': 'bold',
             cursor: 'default',
             fill: 'black'
@@ -89,8 +85,8 @@ class WorldMap extends React.Component {
         series={{
           regions: [
             {
-              values: this.state.mapData, //this is your data
-              scale: this.state.colorScale[this.props.filtered], //your color game's here
+              values: this.state.mapData,
+              scale: this.state.colorScale[this.props.filtered],
               normalizeFunction: "polynomial"
             }
           ]

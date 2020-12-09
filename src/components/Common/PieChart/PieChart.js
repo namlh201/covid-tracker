@@ -4,11 +4,11 @@ import React from 'react';
 
 import C3Chart from "react-c3js";
 
-class BarChart extends React.Component {
+class PieChart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {height: "16rem"},
+      style: { height: "16rem" },
       data: {
         type: "pie",
         ...this.props,
@@ -39,4 +39,4 @@ class BarChart extends React.Component {
   }
 }
 
-export default BarChart;
+export default PieChart;

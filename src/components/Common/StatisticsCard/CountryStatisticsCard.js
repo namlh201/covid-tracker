@@ -17,7 +17,6 @@ class CountryStatisticsCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      country: props.country,
       countryName: "",
       data: {
         total: 0,
@@ -75,57 +74,43 @@ class CountryStatisticsCard extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.updateData(this.state.country);
-  // }
-
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   if (nextProps.country !== prevState.country) {
-  //     return { country: nextProps.country };
-  //   }
-  //   return null;
-  // }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if(this.state.country === nextProps.country) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
-
   componentDidUpdate() {
-    this.updateData(this.props.country);
+    if (this.props.isRendered) {
+      this.updateData(this.props.country);
+    }
   }
 
   render() {
-    return (
-      <Grid.Row cards>
-        <Grid.Col>
-          <Card>
-            <Grid.Row>
-              <Grid.Col xs={12} sm={12} md={4} lg={4} xl={4}>
-                <PieChart {...this.state.chart.data} />
-              </Grid.Col>
-              <Grid.Col xs={12} sm={12} md={8} lg={8} xl={8}>
-                <div className={styles.stats}>
-                  <Grid.Col>
-                    <div className={styles.statsItems}>
-                      <div className={styles.statsBanner}>
-                        STATISTICS IN {this.state.countryName.toUpperCase()} 
+    if (this.props.isRendered) {
+      return (
+        <Grid.Row cards>
+          <Grid.Col>
+            <Card>
+              <Grid.Row>
+                <Grid.Col xs={12} sm={12} md={4} lg={4} xl={4}>
+                  <PieChart {...this.state.chart.data} />
+                </Grid.Col>
+                <Grid.Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                  <div className={styles.stats}>
+                    <Grid.Col>
+                      <div className={styles.statsItems}>
+                        <div className={styles.statsBanner}>
+                          STATISTICS IN {this.state.countryName.toUpperCase()} 
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.statsItems}>
-                      <StatisticsBar {...this.state.data} />
-                    </div>
-                  </Grid.Col>
-                </div>
-              </Grid.Col>
-            </Grid.Row>
-          </Card>
-        </Grid.Col>
-      </Grid.Row>
-    )
+                      <div className={styles.statsItems}>
+                        <StatisticsBar {...this.state.data} />
+                      </div>
+                    </Grid.Col>
+                  </div>
+                </Grid.Col>
+              </Grid.Row>
+            </Card>
+          </Grid.Col>
+        </Grid.Row>
+      )
+    }
+    return null;
   }
 }
 

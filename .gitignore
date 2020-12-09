@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+.flowconfig
 .env
 .env.local
 .env.development.local
